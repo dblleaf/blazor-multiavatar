@@ -9,8 +9,12 @@ Welcome to your new app.
 <div style="width:360px;height:360px;">
     <Multiavatar AvatarId="@this.avatarId" />
 </div>
-
-<button class="btn btn-primary" @onclick="NewAvatar">Refresh</button>
+<p>
+    <input type="text" @bind-value="@this.avatarId" />
+</p>
+<p>
+    <button class="btn btn-primary" @onclick="NewAvatar">Refresh</button>
+</p>
 @code{
     private string avatarId = Guid.NewGuid().ToString(@"N");
     void NewAvatar()
