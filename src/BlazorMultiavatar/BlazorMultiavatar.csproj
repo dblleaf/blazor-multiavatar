@@ -5,12 +5,13 @@
     <RazorLangVersion>3.0</RazorLangVersion>
     <Authors>dblleaf</Authors>
     <Company>BlazorMultiavatar</Company>
-    <AssemblyVersion>0.9.0.1</AssemblyVersion>
-    <FileVersion>0.9.0.1</FileVersion>
-    <Version>0.9.0.1</Version>
+    <AssemblyVersion>0.9.0.2</AssemblyVersion>
+    <FileVersion>0.9.0.2</FileVersion>
+    <Version>0.9.0.2</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/dblleaf/blazor-multiavatar</RepositoryUrl>
     <PackageProjectUrl>https://github.com/dblleaf/blazor-multiavatar</PackageProjectUrl>
+    <Description>This is a Multiavatar library packaged with blazor.</Description>
   </PropertyGroup>
 
   <Import Project="..\..\common.props" />

@@ -16,6 +16,11 @@ Install-Package BlazorMultiavatar
 ```razor
 @using BlazorMultiavatar
 ...
+<AntDesign.Icon Style="font-size:50px;">
+    <Component>
+        <Multiavatar AvatarId="@this.avatarId" />
+    </Component>
+</AntDesign.Icon>
 <Multiavatar AvatarId="@this.avatarId" />
 <button class="btn btn-primary" @onclick="NewAvatar">Refresh</button>
 ...

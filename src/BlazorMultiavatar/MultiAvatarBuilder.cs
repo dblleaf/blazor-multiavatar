@@ -8,7 +8,7 @@
 
     public class MultiAvatarBuilder
     {
-        private const string SvgStart = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 231 231\">";
+        private const string SvgStart = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"{0}\" height=\"{1}\" viewBox=\"0 0 231 231\">";
         private const string SvgEnd = "</svg>";
         private const string Env = "<path d=\"M33.83,33.83a115.5,115.5,0,1,1,0,163.34,115.49,115.49,0,0,1,0-163.34Z\" style=\"fill:#01;\"/>";
         private const string Head = "<path d=\"m115.5 51.75a63.75 63.75 0 0 0-10.5 126.63v14.09a115.5 115.5 0 0 0-53.729 19.027 115.5 115.5 0 0 0 128.46 0 115.5 115.5 0 0 0-53.729-19.029v-14.084a63.75 63.75 0 0 0 53.25-62.881 63.75 63.75 0 0 0-63.65-63.75 63.75 63.75 0 0 0-0.09961 0z\" style=\"fill:#000;\"/>";
@@ -661,7 +661,7 @@
             };
         #endregion
 
-        public static string Build(string avatarId, bool scansEnv = false, MultiAvatarOptions? options = null)
+        public static string Build(string avatarId, bool scansEnv = false, string width = null, string heigit = null, MultiAvatarOptions? options = null)
         {
             if (string.IsNullOrWhiteSpace(avatarId))
             {
@@ -669,6 +669,7 @@
             }
 
             var sP = new Dictionary<string, Dictionary<string, string>>();
+            var svgStart = string.Format(SvgStart, width ?? "1em", heigit ?? "1em");
             #region sharp
 
             // Robo
@@ -866,7 +867,7 @@
                 final["env"] = string.Empty;
             }
 
-            return SvgStart + final["env"] + final["head"] + final["clo"] + final["top"] + final["eyes"] + final["mouth"] + SvgEnd;
+            return svgStart + final["env"] + final["head"] + final["clo"] + final["top"] + final["eyes"] + final["mouth"] + SvgEnd;
         }
 
         private static string GetFinal(Dictionary<string, Dictionary<string, string>> sp, string part, MultiAvatarOptions options)

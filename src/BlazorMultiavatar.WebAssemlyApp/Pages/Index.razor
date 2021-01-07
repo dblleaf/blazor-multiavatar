@@ -5,9 +5,13 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
-
+<Icon Style="font-size:50px;">
+    <Component>
+        <Multiavatar AvatarId="@this.avatarId" />
+    </Component>
+</Icon>
 <div style="width:360px;height:360px;">
-    <Multiavatar AvatarId="@this.avatarId" />
+    <Multiavatar AvatarId="@this.avatarId" Width="100%" Height="100%" />
 </div>
 <p>
     <input type="text" @bind-value="@this.avatarId" />

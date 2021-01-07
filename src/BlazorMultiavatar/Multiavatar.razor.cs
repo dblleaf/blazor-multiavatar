@@ -7,6 +7,12 @@
         [Parameter]
         public string AvatarId { get; set; }
 
-        private string Svg => MultiAvatarBuilder.Build(this.AvatarId);
+        [Parameter]
+        public string Width { get; set; }
+
+        [Parameter]
+        public string Height { get; set; }
+
+        private string Svg => MultiAvatarBuilder.Build(this.AvatarId, width: this.Width, heigit: this.Height);
     }
 }
